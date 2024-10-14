@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "checkJs": true,
-    "customConditions": ["development"],
     "declaration": true,
-    "emitDeclarationOnly": true,
     "exactOptionalPropertyTypes": true,
-    "lib": ["es2022"],
-    "module": "node16",
+    "lib": ["es5"],
+    "module": "commonjs",
     "strict": true,
-    "target": "es2022"
+    "target": "es5",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
   },
   "exclude": ["coverage/", "node_modules/"],
   "include": ["**/*.js"]

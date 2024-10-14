@@ -21,13 +21,14 @@ test('remarkGfm', async function (t) {
 
   await t.test('should not throw if not passed options', async function () {
     assert.doesNotThrow(function () {
+      // @ts-expect-error: fine.
       remark().use(remarkGfm).freeze()
     })
   })
 })
 
 test('fixtures', async function (t) {
-  const base = new URL('fixtures/', import.meta.url)
+  const base = new URL('fixtures/', __dirname)
   const folders = await fs.readdir(base)
 
   let index = -1
@@ -61,6 +62,7 @@ test('fixtures', async function (t) {
         config = {stringLength: stringWidth}
       }
 
+      // @ts-expect-error: fine.
       const proc = remark().use(remarkGfm, config)
       const actual = proc.parse(input)
 

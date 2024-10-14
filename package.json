@@ -29,8 +29,7 @@
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
   "sideEffects": false,
-  "type": "module",
-  "exports": "./index.js",
+  "main": "dist/bundle.js",
   "files": [
     "lib/",
     "index.d.ts",
@@ -45,6 +44,8 @@
     "unified": "^11.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/node": "^20.0.0",
     "c8": "^8.0.0",
     "is-hidden": "^2.0.0",
@@ -52,6 +53,8 @@
     "remark": "^15.0.0",
     "remark-cli": "^11.0.0",
     "remark-preset-wooorm": "^9.0.0",
+    "rollup": "^4.24.0",
+    "rollup-plugin-terser": "^7.0.2",
     "string-width": "^6.0.0",
     "to-vfile": "^8.0.0",
     "type-coverage": "^2.0.0",
@@ -59,7 +62,7 @@
     "xo": "^0.56.0"
   },
   "scripts": {
-    "build": "tsc --build --clean && tsc --build && type-coverage",
+    "build": "rollup -c rollup.config.js",
     "format": "remark . --frail --output --quiet && prettier . --log-level warn --write && xo --fix",
     "prepack": "npm run build && npm run format",
     "test": "npm run build && npm run format && npm run test-coverage",

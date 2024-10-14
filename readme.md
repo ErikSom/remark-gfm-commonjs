@@ -8,6 +8,16 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
+See CommonJS output in the dist folder.
+To use this in your project add this to your package.json:
+
+```json
+"devDependencies": {
+    // ... other dependencies
+    "remark-gfm": "github:eriksom/remark-gfm-commonjs",
+}
+```
+
 **[remark][]** plugin to support [GFM][] (autolink literals, footnotes,
 strikethrough, tables, tasklists).
 
